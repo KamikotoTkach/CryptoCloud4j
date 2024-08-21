@@ -34,7 +34,7 @@ client.sendRequest(request).thenAccept(response -> {
 
 Listen for postback:
 ```java
-new PostbackListener("/your/notify/url", "YOUR-SHOP-SECRET", (int) port, (postbackRequest, token) -> {
+new PostbackListener("/your/notify/url", "YOUR-SHOP-SECRET", (int) port, (postbackRequest, token) -> { // <-- is called only if the JWT token is valid
     System.out.printf("""
                       Bill status updated:
                       Invoice id %s
