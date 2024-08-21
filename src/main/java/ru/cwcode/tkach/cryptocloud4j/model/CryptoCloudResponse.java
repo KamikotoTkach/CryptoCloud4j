@@ -2,12 +2,12 @@ package ru.cwcode.tkach.cryptocloud4j.model;
 
 import lombok.Getter;
 import ru.cwcode.tkach.httpWrapper.BaseRequest;
-import ru.cwcode.tkach.httpWrapper.BaseResponse;
+import ru.cwcode.tkach.httpWrapper.SimpleResponse;
 
 import java.util.Map;
 
 @Getter
-public class CryptoCloudResponse extends BaseResponse<CryptoCloudResponse> {
+public class CryptoCloudResponse extends SimpleResponse<CryptoCloudResponse> {
   String status;
   
   public CryptoCloudResponse(boolean success, int code, BaseRequest<?, ?> request, Map<String, Object> response) {
