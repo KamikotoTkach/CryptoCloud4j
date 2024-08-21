@@ -3,15 +3,15 @@ SDK for [CryptoCloud](https://cryptocloud.plus/) <br>
 _WIP: currently wrapped only CreateBillRequest and listening for bill status update_
 <br>
 
-Usage:
+## Usage:
+Create client
 ```java
-//create client
 ServiceClient client = new ServiceClient(new OkHttpClient(), new Gson(), "https://api.cryptocloud.plus/");
 client.addHeader("Authorization", "Token YOUR-SHOP-TOKEN");
 ```
 <br>
 
-Create bill example:
+Create bill:
 ```java 
 CreateBillRequest request = new CreateBillRequest();
 request.shopId("YOUR-SHOP-ID");
@@ -32,7 +32,7 @@ client.sendRequest(request).thenAccept(response -> {
 ```
 <br>
 
-Postback listening example:
+Listen for postback:
 ```java
 new PostbackListener("/your/notify/url", "YOUR-SHOP-SECRET", (int) port, (postbackRequest, token) -> {
     System.out.printf("""
