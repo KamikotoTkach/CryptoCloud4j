@@ -10,7 +10,7 @@ Add to pom:
 <dependency>
     <groupId>ru.cwcode.tkach.cryptocloud4j</groupId>
     <artifactId>CryptoCloud4j</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
