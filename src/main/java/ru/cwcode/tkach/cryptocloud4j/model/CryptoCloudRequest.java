@@ -7,5 +7,6 @@ public class CryptoCloudRequest<T extends CryptoCloudRequest<T>> extends BaseReq
   public CryptoCloudRequest(String method, String url) {
     super(method, url, CryptoCloudResponse.class);
     addResponseModel(400, BadRequest.class);
+    addResponseModel(403, BadRequest.class);
   }
 }
