@@ -20,11 +20,11 @@ request.orderId("testid"); // <-- Your order ID, not required
     
 client.sendRequest(request).thenAccept(response -> {
     response.getHandler()
-        .ifMatch(200, BillCreated.class, billCreated -> {
+        .ifMatch(200, BillCreatedResponse.class, billCreated -> {
             System.out.println("Bill created");
             System.out.println(billCreated);
           })
-        .ifMatch(400, BadRequest.class, badRequest -> {
+        .ifMatch(400, BadRequestResponse.class, badRequest -> {
             System.out.println("Bad request");
             System.out.println(badRequest);
           })
