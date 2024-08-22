@@ -21,6 +21,8 @@ public class CryptoCloudResponse extends SimpleResponse<CryptoCloudResponse> {
     
     if (result instanceof Map) {
       return (Map<String, Object>) result;
+    } else if (result == null) {
+      return getResponse();
     } else {
       return Map.of("result", result);
     }
