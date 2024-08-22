@@ -4,6 +4,16 @@ Currently wrapping all v2 requests
 <br>
 
 ## Usage:
+Add to pom:
+
+```xml
+<dependency>
+    <groupId>ru.cwcode.tkach.cryptocloud4j</groupId>
+    <artifactId>CryptoCloud4j</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
 Create client
 ```java
 ServiceClient client = new ServiceClient(new OkHttpClient(), new Gson(), "https://api.cryptocloud.plus/");
@@ -32,7 +42,16 @@ client.sendRequest(request).thenAccept(response -> {
 ```
 <br>
 
-Listen for postback:
+### Listening for postback:
+Add to pom:
+```xml
+<dependency>
+    <groupId>ru.cwcode.tkach.cryptocloud4j</groupId>
+    <artifactId>CryptoCloud4jListener</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+Create listener:
 ```java
 new PostbackListener("/your/notify/url", "YOUR-SHOP-SECRET", (int) port, (postbackRequest, token) -> { // <-- is called only if the JWT token is valid
     System.out.printf("""
