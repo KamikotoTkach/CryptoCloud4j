@@ -6,13 +6,150 @@
 
     <groupId>ru.cwcode.tkach.cryptocloud4j</groupId>
     <artifactId>CryptoCloud4j</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
+
+    <name>CryptoCloud4j</name>
+
+    <description>SDK for CryptoCloud based on HttpWrapper</description>
+    <url>https://github.com/KamikotoTkach/CryptoCloud4j/</url>
+
+    <licenses>
+        <license>
+            <name>GNU Affero General Public License v3.0</name>
+            <url>https://github.com/KamikotoTkach/CryptoCloud4j/blob/master/LICENSE</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:https://github.com/KamikotoTkach/CryptoCloud4j.git</connection>
+        <url>https://github.com/KamikotoTkach/CryptoCloud4j</url>
+        <developerConnection>scm:git:https://github.com/KamikotoTkach/CryptoCloud4j.git</developerConnection>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>tkach</id>
+            <name>Tkachenko Danil</name>
+            <url>https://t.me/tkachx</url>
+        </developer>
+    </developers>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>ossrh</id>
+                    <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+                </snapshotRepository>
+            </distributionManagement>
+
+            <properties>
+                <plugin.nexus.staging.ver>1.6.13</plugin.nexus.staging.ver>
+                <plugin.maven.source.ver>3.2.1</plugin.maven.source.ver>
+                <plugin.maven.javadoc.ver>3.3.1</plugin.maven.javadoc.ver>
+                <plugin.maven.gpg.ver>3.0.1</plugin.maven.gpg.ver>
+            </properties>
+
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.sonatype.plugins</groupId>
+                            <artifactId>nexus-staging-maven-plugin</artifactId>
+                            <version>${plugin.nexus.staging.ver}</version>
+                            <extensions>true</extensions>
+                            <configuration>
+                                <serverId>ossrh</serverId>
+                                <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+                                <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                            </configuration>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-source-plugin</artifactId>
+                            <version>${plugin.maven.source.ver}</version>
+                            <executions>
+                                <execution>
+                                    <id>attach-sources</id>
+                                    <goals>
+                                        <goal>jar-no-fork</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-javadoc-plugin</artifactId>
+                            <version>${plugin.maven.javadoc.ver}</version>
+                            <executions>
+                                <execution>
+                                    <id>attach-javadocs</id>
+                                    <goals>
+                                        <goal>jar</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                            <configuration>
+                                <additionalOptions>
+                                    <additionalOption>-Xdoclint:none</additionalOption>
+                                </additionalOptions>
+                            </configuration>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-gpg-plugin</artifactId>
+                            <version>${plugin.maven.gpg.ver}</version>
+                            <executions>
+                                <execution>
+                                    <id>sign-artifacts</id>
+                                    <phase>verify</phase>
+                                    <goals>
+                                        <goal>sign</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                            <configuration>
+                                <gpgArguments>
+                                    <gpgArgument>--pinentry-mode</gpgArgument>
+                                    <gpgArgument>loopback</gpgArgument>
+                                </gpgArguments>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+                <plugins>
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
     <dependencies>
         <dependency>
             <groupId>ru.cwcode.tkach</groupId>
