@@ -8,17 +8,17 @@ import java.util.Map;
 public class BillCancelledResponse extends ModelObject {
   ModelField<String[]> status = new ModelField<>("result", String[].class, this);
   
-  /**
-   * @return "ok" if cancelled
-   */
-  public String getStatus() {
-    return status.get()[0];
-  }
-  
   public BillCancelledResponse() {
   }
   
   public BillCancelledResponse(Map<String, Object> data) {
     super(data);
+  }
+  
+  /**
+   * @return "ok" if cancelled
+   */
+  public String getStatus() {
+    return status.get()[0];
   }
 }

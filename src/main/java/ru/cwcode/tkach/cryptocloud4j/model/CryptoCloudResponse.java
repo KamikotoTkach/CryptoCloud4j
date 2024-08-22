@@ -16,7 +16,7 @@ public class CryptoCloudResponse extends SimpleResponse<CryptoCloudResponse> {
   }
   
   @Override
-  protected Map<String, Object> getResponse() {
+  public Map<String, Object> getResponse() {
     Object result = super.getResponse().get("result");
     
     if (result instanceof Map) {

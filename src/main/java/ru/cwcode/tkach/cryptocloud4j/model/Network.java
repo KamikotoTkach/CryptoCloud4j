@@ -4,7 +4,7 @@ import lombok.Getter;
 import ru.cwcode.tkach.httpWrapper.ModelField;
 import ru.cwcode.tkach.httpWrapper.ModelObject;
 
-import java.util.LinkedHashMap;
+import java.util.Map;
 
 @Getter
 public class Network extends ModelObject {
@@ -13,7 +13,7 @@ public class Network extends ModelObject {
   ModelField<String> icon = new ModelField<>("icon", String.class, this);
   ModelField<String> fullname = new ModelField<>("fullname", String.class, this);
   
-  public Network(LinkedHashMap<String, Object> data) {
+  public Network(Map<String, Object> data) {
     super(data);
   }
   

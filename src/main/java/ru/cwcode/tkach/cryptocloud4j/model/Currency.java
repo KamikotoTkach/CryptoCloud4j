@@ -4,7 +4,7 @@ import lombok.Getter;
 import ru.cwcode.tkach.httpWrapper.ModelField;
 import ru.cwcode.tkach.httpWrapper.ModelObject;
 
-import java.util.LinkedHashMap;
+import java.util.Map;
 
 @Getter
 public class Currency extends ModelObject {
@@ -13,7 +13,7 @@ public class Currency extends ModelObject {
   ModelField<String> fullcode = new ModelField<>("fullcode", String.class, this);
   ModelField<Network> network = new ModelField<>("network", Network.class, this);
   
-  public Currency(LinkedHashMap<String, Object> data) {
+  public Currency(Map<String, Object> data) {
     super(data);
   }
   
