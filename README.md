@@ -1,6 +1,6 @@
 # CryptoCloud4j
 SDK for [CryptoCloud](https://cryptocloud.plus/) <br>
-_WIP: currently wrapped only CreateBillRequest and listening for bill status update_
+Currently wrapping all v2 requests
 <br>
 
 ## Usage:
