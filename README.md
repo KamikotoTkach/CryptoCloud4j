@@ -1,5 +1,5 @@
 # CryptoCloud4j
-SDK for [CryptoCloud](https://cryptocloud.plus/) <br>
+SDK for [CryptoCloud](https://cryptocloud.plus/) based on [HttpWrapper](https://github.com/KamikotoTkach/HttpWrapper) <br> 
 Currently wrapping all v2 requests
 <br>
 
