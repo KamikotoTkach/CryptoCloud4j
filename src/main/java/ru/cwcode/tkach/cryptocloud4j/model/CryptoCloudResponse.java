@@ -21,8 +21,8 @@ public class CryptoCloudResponse extends SimpleResponse<CryptoCloudResponse> {
     
     if (result instanceof Map) {
       return (Map<String, Object>) result;
+    } else {
+      return Map.of("result", result);
     }
-    
-    throw new IllegalArgumentException("No result field found");
   }
 }
