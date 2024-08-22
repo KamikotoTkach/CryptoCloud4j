@@ -3,6 +3,8 @@ package ru.cwcode.tkach.cryptocloud4j.model.response;
 import ru.cwcode.tkach.httpWrapper.ModelField;
 import ru.cwcode.tkach.httpWrapper.ModelObject;
 
+import java.util.Map;
+
 public class BillCancelled extends ModelObject {
   ModelField<String[]> status = new ModelField<>("result", String[].class, this);
   
@@ -11,5 +13,12 @@ public class BillCancelled extends ModelObject {
    */
   public String getStatus() {
     return status.get()[0];
+  }
+  
+  public BillCancelled() {
+  }
+  
+  public BillCancelled(Map<String, Object> data) {
+    super(data);
   }
 }

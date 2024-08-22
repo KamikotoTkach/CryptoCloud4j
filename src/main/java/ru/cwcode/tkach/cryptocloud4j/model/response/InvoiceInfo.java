@@ -6,6 +6,8 @@ import ru.cwcode.tkach.cryptocloud4j.model.Project;
 import ru.cwcode.tkach.httpWrapper.ModelField;
 import ru.cwcode.tkach.httpWrapper.ModelObject;
 
+import java.util.Map;
+
 @Getter
 public class InvoiceInfo extends ModelObject {
   /**
@@ -85,4 +87,11 @@ public class InvoiceInfo extends ModelObject {
    * test invoice sign.
    */
   ModelField<Boolean> testMode = new ModelField<>("test_mode", Boolean.class, this);
+  
+  public InvoiceInfo() {
+  }
+  
+  public InvoiceInfo(Map<String, Object> data) {
+    super(data);
+  }
 }
