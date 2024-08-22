@@ -3,7 +3,7 @@ package ru.cwcode.tkach.cryptocloud4j.model.request;
 import lombok.Getter;
 import ru.cwcode.tkach.cryptocloud4j.model.CryptoCloudRequest;
 import ru.cwcode.tkach.cryptocloud4j.model.Time;
-import ru.cwcode.tkach.cryptocloud4j.model.response.BillCreated;
+import ru.cwcode.tkach.cryptocloud4j.model.response.BillCreatedResponse;
 import ru.cwcode.tkach.httpWrapper.ModelField;
 import ru.cwcode.tkach.httpWrapper.ModelObject;
 
@@ -12,7 +12,7 @@ import java.util.Map;
 public class CreateBillRequest extends CryptoCloudRequest<CreateBillRequest> {
   public CreateBillRequest() {
     super("POST", "v2/invoice/create");
-    addResponseModel(200, BillCreated.class);
+    addResponseModel(200, BillCreatedResponse.class);
   }
   
   /**

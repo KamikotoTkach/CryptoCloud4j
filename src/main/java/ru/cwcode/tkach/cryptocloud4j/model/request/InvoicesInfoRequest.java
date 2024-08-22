@@ -1,14 +1,14 @@
 package ru.cwcode.tkach.cryptocloud4j.model.request;
 
 import ru.cwcode.tkach.cryptocloud4j.model.CryptoCloudRequest;
-import ru.cwcode.tkach.cryptocloud4j.model.response.InvoicesInfo;
+import ru.cwcode.tkach.cryptocloud4j.model.response.InvoicesInfoResponse;
 
 import java.util.List;
 
 public class InvoicesInfoRequest extends CryptoCloudRequest<InvoicesInfoRequest> {
   public InvoicesInfoRequest() {
     super("POST", "v2/invoice/merchant/info");
-    addResponseModel(200, InvoicesInfo.class);
+    addResponseModel(200, InvoicesInfoResponse.class);
   }
   
   /**

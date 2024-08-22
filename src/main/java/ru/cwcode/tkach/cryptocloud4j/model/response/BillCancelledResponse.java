@@ -5,7 +5,7 @@ import ru.cwcode.tkach.httpWrapper.ModelObject;
 
 import java.util.Map;
 
-public class BillCancelled extends ModelObject {
+public class BillCancelledResponse extends ModelObject {
   ModelField<String[]> status = new ModelField<>("result", String[].class, this);
   
   /**
@@ -15,10 +15,10 @@ public class BillCancelled extends ModelObject {
     return status.get()[0];
   }
   
-  public BillCancelled() {
+  public BillCancelledResponse() {
   }
   
-  public BillCancelled(Map<String, Object> data) {
+  public BillCancelledResponse(Map<String, Object> data) {
     super(data);
   }
 }

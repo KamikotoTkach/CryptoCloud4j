@@ -8,13 +8,13 @@ import ru.cwcode.tkach.httpWrapper.ModelObject;
 import java.util.Map;
 
 @Getter
-public class Balances extends ModelObject {
+public class BalancesResponse extends ModelObject {
   ModelField<ShopCurrencyBalance[]> balances = new ModelField<>("result", ShopCurrencyBalance[].class, this);
   
-  public Balances() {
+  public BalancesResponse() {
   }
   
-  public Balances(Map<String, Object> data) {
+  public BalancesResponse(Map<String, Object> data) {
     super(data);
   }
 }

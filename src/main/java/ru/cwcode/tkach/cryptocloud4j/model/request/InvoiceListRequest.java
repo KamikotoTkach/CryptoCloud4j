@@ -1,7 +1,7 @@
 package ru.cwcode.tkach.cryptocloud4j.model.request;
 
 import ru.cwcode.tkach.cryptocloud4j.model.CryptoCloudRequest;
-import ru.cwcode.tkach.cryptocloud4j.model.response.InvoicesList;
+import ru.cwcode.tkach.cryptocloud4j.model.response.InvoicesListResponse;
 
 /**
  * When you send this request, you will receive a list of invoices for the specified period.
@@ -10,7 +10,7 @@ import ru.cwcode.tkach.cryptocloud4j.model.response.InvoicesList;
 public class InvoiceListRequest extends CryptoCloudRequest<InvoiceListRequest> {
   public InvoiceListRequest() {
     super("POST", "v2/invoice/merchant/info");
-    addResponseModel(200, InvoicesList.class);
+    addResponseModel(200, InvoicesListResponse.class);
   }
   
   /**

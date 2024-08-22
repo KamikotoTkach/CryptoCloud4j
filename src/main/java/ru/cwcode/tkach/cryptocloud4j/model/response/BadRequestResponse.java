@@ -5,12 +5,12 @@ import ru.cwcode.tkach.httpWrapper.ModelObject;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class BadRequest extends ModelObject {
-  public BadRequest(Map<String, Object> data) {
+public class BadRequestResponse extends ModelObject {
+  public BadRequestResponse(Map<String, Object> data) {
     super(data);
   }
   
-  public BadRequest() {
+  public BadRequestResponse() {
   }
   
   public Map<String, String> getErrors() {

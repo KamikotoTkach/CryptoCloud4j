@@ -9,7 +9,7 @@ import ru.cwcode.tkach.httpWrapper.ModelObject;
 import java.util.Map;
 
 @Getter
-public class BillCreated extends ModelObject {
+public class BillCreatedResponse extends ModelObject {
   /**
    * unique identifier of the invoice with the INV prefix.
    */
@@ -98,10 +98,10 @@ public class BillCreated extends ModelObject {
    */
   ModelField<Boolean> testMode = new ModelField<>("test_mode", Boolean.class, this);
   
-  public BillCreated(Map<String, Object> data) {
+  public BillCreatedResponse(Map<String, Object> data) {
     super(data);
   }
   
-  public BillCreated() {
+  public BillCreatedResponse() {
   }
 }

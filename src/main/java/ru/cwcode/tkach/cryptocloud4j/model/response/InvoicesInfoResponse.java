@@ -8,13 +8,13 @@ import ru.cwcode.tkach.httpWrapper.ModelObject;
 import java.util.Map;
 
 @Getter
-public class InvoicesInfo extends ModelObject {
+public class InvoicesInfoResponse extends ModelObject {
   ModelField<InvoiceInfo[]> invoices = new ModelField<>("result", InvoiceInfo[].class, this);
   
-  public InvoicesInfo() {
+  public InvoicesInfoResponse() {
   }
   
-  public InvoicesInfo(Map<String, Object> data) {
+  public InvoicesInfoResponse(Map<String, Object> data) {
     super(data);
   }
 }
