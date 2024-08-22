@@ -1,8 +1,6 @@
-package ru.cwcode.tkach.cryptocloud4j.model.response;
+package ru.cwcode.tkach.cryptocloud4j.model;
 
 import lombok.Getter;
-import ru.cwcode.tkach.cryptocloud4j.model.Currency;
-import ru.cwcode.tkach.cryptocloud4j.model.Project;
 import ru.cwcode.tkach.httpWrapper.ModelField;
 import ru.cwcode.tkach.httpWrapper.ModelObject;
 
